@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.1)
 
-# comments
-# Author Alexey Panov a.k.a Dyadya Lesha
-# Spacial thanks to Vladimir Kazansky a.k.a Dadya Vova for preparing a very nice packages
+# Authors:
+# - Alexey Panov a.k.a Dyadya Lesha
+# - Vladimir Kazansky a.k.a Dadya Vova 
 
 project(pm2click)
 
