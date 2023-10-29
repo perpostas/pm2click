@@ -1,1 +1,1 @@
-A parser debian package
+A debian package for parser binary
