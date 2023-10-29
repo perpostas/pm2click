@@ -28,8 +28,8 @@ pm2click requires libxml2 library (MIT licenced) to be installed in your linux s
 ### Contributing
 
 The current version of the code can be found GitHub 
-at <https://github.com/perpostas/pm2click.git>.  The best way to get involved
-is by creating issues and merge requests on GitHub.
+at <https://github.com/perpostas/pm2click.git>.  
+The best way to get involved is by creating issues and merge requests on GitHub.
 
 
 ### Authors
