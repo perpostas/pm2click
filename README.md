@@ -1,5 +1,5 @@
 # pm2click
-A command line Linux utility developed for parsing packet core XML statistical files.  Implemented in C.
+A command line Linux utility developed for parsing packet core XML statistical files.  
 
 The goal of pm2click is to parse XML statistical file and transform XML counters data to TSV format.  
 The utility uses libxml2 library SAX parser.
@@ -33,4 +33,4 @@ is by creating issues and merge requests on GitHub.
 
 
 ### Authors
-included source files comments
+Included in source files comments
