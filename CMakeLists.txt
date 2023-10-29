@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.1)
 
-# Authors
-# Alexey Panov a.k.a Dyadya Lesha
-# Vladimir Kazansky a.k.a Dadya Vova
+# Authors:
+# - Alexey Panov a.k.a Dyadya Lesha
+# - Vladimir Kazansky a.k.a Dadya Vova 
 
 project(pm2click)
 
