@@ -360,7 +360,7 @@ int main (int argc, char *argv[]) {
             exit(1);
         }
         else {
-            fprintf(stderr,"We should write output to a file: %s!\n", arguments.output_file);
+            fprintf(stdout,"Output has benn saved in file: %s\n", arguments.output_file);
                 print_xml(root_element, arguments.customer_name, f);
             fclose(f);
         }

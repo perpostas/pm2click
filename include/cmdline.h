@@ -13,7 +13,8 @@ static char doc[] =
   "pm2click -- a program that takes PM (Performance Measurement) XML as input, and converts it to text suitable for storing in Clickhouse DB";
 
 static struct argp_option options[] = {
-  {"customer", 'c', 0,    OPTION_ARG_OPTIONAL,  "Customer name - optional.\n\"default\" if not specified" },
+  {"customer", 'c', "CUSTOMER",    0,
+   "Customer name - optional.\"default\" if not specified" },
   {"output",   'o', "FILE", 0,
    "Output to FILE instead of standard output" },
   { 0 }
