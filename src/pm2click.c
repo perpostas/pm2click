@@ -20,8 +20,7 @@
 *   or
 *   "MCC=xxx,MNC=xxx,ManagedElement=yyy"
 */
-void
-fillLocalDnStruct(char * localDn, struct structLocalDn * sLocalDn, char * elementType) {
+static void fillLocalDnStruct(char * localDn, struct structLocalDn * sLocalDn, char * elementType) {
     char *token = NULL;
     char *localBuf = malloc(sizeof(char) * (strlen(localDn)+1));
 
@@ -58,7 +57,8 @@ fillLocalDnStruct(char * localDn, struct structLocalDn * sLocalDn, char * elemen
 /*
 * 2022-03-30T00:15:00+03:00 -> int 3
 */
-char *getTzOffsetString(char *isoDateTime) {    struct
+static char* getTzOffsetString(char *isoDateTime) {    
+    struct
         tm *gmcal,
         tmIsoTime;
 
@@ -92,7 +92,7 @@ char *getTzOffsetString(char *isoDateTime) {    struct
 }
 
 
-int getHrTzOffset(char *isoDateTime) {
+static int getHrTzOffset(char *isoDateTime) {
     char *tzOffsetStr = getTzOffsetString(isoDateTime);
     if (tzOffsetStr == NULL) return -1;
 
@@ -109,7 +109,7 @@ int getHrTzOffset(char *isoDateTime) {
 }
 
 
-int getMinTzOffset(char *isoDateTime) {
+static int getMinTzOffset(char *isoDateTime) {
     char *tzOffsetStr = getTzOffsetString(isoDateTime);
     if (tzOffsetStr == NULL) return -1;
 
@@ -270,6 +270,21 @@ static void print_xml(xmlNode * node, char *customerName, FILE *ofile) {
                 char date[12] = {0};
                 strncpy(date, buf, 10);
 
+                // buf  - ISO DateTime (2019-11-22 15:15:00)
+                // date - date (2019-11-22) 
+                // measInfoId - KPISystemCP-ISA 
+                // measObjLdn - KPI=System,GroupName=CP-ISA,group=1,slot=5,mda=1
+                // tmpCountersArray[indexValue] - counter name (VS.SDFsLcpUtilization)
+                // tmpVal - counter value
+                // 0 - suspect flag (do not actualy taken into account, so always is 0) 
+                // sLocalDn.elementName - element name
+                // elementType - element type (pgw)
+                // swVersion - software version
+                // sLocalDn.mcc - MCC
+                // sLocalDn.mnc - MNC
+                // duration - measurement duration (PT900S)
+                // customerName - customer name as provided in argument
+                
                 fprintf (ofile,"%s\t%s\t%s\t%s\t%s\t%s\t%i\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", 
                         buf, date, measInfoId, measObjLdn, tmpCountersArray[indexValue], tmpVal, 0, sLocalDn.elementName, elementType, swVersion, sLocalDn.mcc, sLocalDn.mnc, duration, customerName);
 

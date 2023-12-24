@@ -10,7 +10,7 @@ const char *argp_program_bug_address =
 static char args_doc[] = "PM-FILENAME";
 
 static char doc[] =
-  "pm2click -- a program that takes PM (Performance Measurement) XML as input, and converts it to text suitable for storing in Clickhouse DB";
+  "pm2click -- a program that takes PM (Performance Measurement) XML as input, and converts it to TSV text suitable for storing in Clickhouse DB";
 
 static struct argp_option options[] = {
   {"customer", 'c', "CUSTOMER",    0,

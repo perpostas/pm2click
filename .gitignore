@@ -4,3 +4,9 @@ build*/
 
 # IDEs
 .idea
+
+**/data
+**/build
+**/.git
+**/.vscode
+**/.cache
